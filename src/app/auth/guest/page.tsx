@@ -9,9 +9,8 @@ export default function GuestPage() {
   const router = useRouter();
   const [error, setError] = useState("");
 
-  const guestEmail = process.env.NEXT_PUBLIC_GUEST_EMAIL || "guest@example.com";
-  const guestPassword =
-    process.env.NEXT_PUBLIC_GUEST_PASSWORD || "guestpassword";
+  const guestEmail = process.env.FIREBASE_GUEST_EMAIL as string;
+  const guestPassword = process.env.FIREBASE_GUEST_PASSWORD as string;
 
   const handleGuestLogin = async () => {
     setError("");

@@ -30,9 +30,15 @@ export default function SignupPage() {
       {/* Logo */}
       <img src="/logo.png" alt="Booth Buddy" className="w-24 mb-8 sm:w-28" />
 
-      <h1 className="mb-8 text-2xl font-bold text-center text-gray-900 dark:text-gray-100 sm:text-3xl">
-        Sign Up
-      </h1>
+      {/* Heading + Subheading */}
+      <div className="px-2 mb-8 text-center sm:px-0">
+        <h1 className="text-2xl font-bold leading-snug text-gray-900 dark:text-gray-100 sm:text-3xl md:text-4xl">
+          Create Account
+        </h1>
+        <p className="mt-4 text-sm text-gray-600 dark:text-gray-300 sm:text-base">
+          Sign up today and start managing <br /> your inventory in minutes.
+        </p>
+      </div>
 
       {/* Email Signup Form */}
       <form
