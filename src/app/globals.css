@@ -1,26 +1,38 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f9fafb; /* gray-50 for light mode */
+    --foreground: #1f2937; /* gray-800 for text */
+    --primary: #3b82f6; /* blue-500 */
+    --secondary: #10b981; /* emerald-500 */
+    --error: #f43f5e; /* rose-500 */
+    --warning: #f59e0b; /* amber-500 */
+    --font-roboto: "Roboto", ui-sans-serif, system-ui, sans-serif;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #111827; /* gray-900 for dark mode */
+      --foreground: #e5e7eb; /* gray-200 for text */
+    }
+  }
+
+  /* Override for manual toggle (data-theme attribute) */
+  [data-theme="light"] {
+    --background: #f9fafb; /* gray-50 */
+    --foreground: #1f2937; /* gray-800 */
+  }
+
+  [data-theme="dark"] {
+    --background: #111827; /* gray-900 */
+    --foreground: #e5e7eb; /* gray-200 */
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-roboto);
+  }
 }
